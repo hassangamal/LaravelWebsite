@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/website/css/font-awesome.min.css">
     <script src="/website/js/jquery.min.js"></script>
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href='http://fonts.googleapis.com/css?fa  mily=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
 
     <title>
         LaravelApp |
@@ -20,13 +20,13 @@
 <body>
 
 <div class="header">
-    <div class="container"> <a class="navbar-brand" href="index.html"><i class="fa fa-paper-plane"></i> ONE</a>
-        <div class="menu"> <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /> </a>
+    <div class="container"> <a class="navbar-brand" href="{{ url('/') }}"><i class="fa fa-paper-plane"></i> ONE</a>
+        <div class="menu"> <a class="toggleMenu" href="#"><img src="/website/images/nav_icon.png" alt="" /> </a>
             <ul class="nav" id="nav">
-                <li class="current"><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li class="current"><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="/website/about.html">About Us</a></li>
+                <li><a href="/website/services.html">Services</a></li>
+                <li><a href="/website/contact.html">Contact Us</a></li>
                     <!-- Authentication Links -->
                     @guest
                         <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -63,10 +63,9 @@
 
 
     @yield('content')
-
+    @yield('footer')
 <script type="text/javascript" src="/website/js/responsive-nav.js"></script>
     <script src="/website/js/bootstrap.min.js"></script>
     <script src="/website/js/jquery.flexslider.js"></script>
-    @yield('footer')
 </body>
 </html>
